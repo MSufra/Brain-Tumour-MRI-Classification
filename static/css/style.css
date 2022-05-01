@@ -1,0 +1,30 @@
+body {
+    background: #fff;
+
+  }
+
+header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #555;
+}
+
+header span{
+    background: #0D67B5;
+    color: #fff;
+}
+
+header{
+    background: #0D67B5;
+    color: #fff;
+}
+
+#headertext {
+    color: #fff;
+}
+
+.img-thumbnail {
+    width:300px;
+    height: auto;
+}
