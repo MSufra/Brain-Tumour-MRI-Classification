@@ -12,11 +12,10 @@
         <span class="fs-4">Brain Tumor Classification</span>
       </a>
 
-      <!-- <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link" style="color: #fff;">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" style="color: #fff;">Patients</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" style="color: #fff;">About</a></li>
-      </ul> -->
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link" style="color: #fff;">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('patients') }}" class="nav-link" style="color: #fff;">Patients</a></li>
+      </ul>
     </header>
  
     <div class="container text-left">
@@ -32,9 +31,23 @@
       
       
       
-      <p>Upload your MRI as either a .jpeg or .png</p>
+      <p>Enter your details and upload your MRI as either a .jpeg or .png</p>
       <form method="POST" action="" enctype="multipart/form-data">
-        <p><input type="file" name="file"></p>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+
+        <label for="Age">Age</label><br>
+        <input type="text" id="age" name="age"><br>
+
+        <label for="Sex">Sex</label><br>
+        <input type="text" id="sex" name="sex"><br>
+
+        <label for="file">MRI File</label><br>
+        <p><input type="file" id="file" name="file"></p>
+
         <p><input type="submit" value="Submit"></p>
       </form>
     <p>{{ prediction }}</p>
@@ -45,19 +58,20 @@
         <h2 class="title">About</h2>
         <hr>
         <div class="row">
-          <div class="row">
             
             <div class="thumbnail">
               <h3>No Tumor</h3>
               <img src="../static/images/notumor.jpg" alt="..." class="img-thumbnail">
               <p>These MRIs depict healthy brains with no obvious tumour.</p>
               </div>
+            </div> 
           <div class="thumbnail">
             <h3>Glioma</h3>
             <img src="../static/images/glioma.jpg" alt="..." class="img-thumbnail">
             <p>A Glioma is a tumour of the glial cells in the brain and spinal cord.<br>
               They are the most common type of brain tumor and make up around 80 percent of all malignant tumours.</p>
           </div>
+        </div> 
           <div class="row">
             <div class="thumbnail">
               <h3>Meningioma</h3>
@@ -65,6 +79,7 @@
               <p>A Meningioma is a tumour of the  meninges, which is the membranous layers surrounding the brain and spinal cord.<br>
                 Meningiomas are often benign and cases that do result in symptoms can often be resolved via surgery.</p>
             </div>
+          </div> 
             <div class="row">
               <div class="thumbnail">
                 <h3>Pituitary Tumor</h3>
@@ -73,10 +88,10 @@
                   Most adenomas are benign but may result in hormane imbalances.
                 </p>
               </div>
-
-
+            </div>
+       </div>
     </div>
     </div>
-    </div>
+    
   </body>
 </html>
